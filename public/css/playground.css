@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ramabhadra&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Tac+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  font: inherit;
+}
+
+select,
+option,
+textarea,
+img {
+  font: inherit;
+}
+
+img {
+  height: 100%;
+}
+
+:root {
+  --ff: "Ramabhadra", sans-serif;
+  /* --hf: "Pacifico", cursive; */
+  /* --hf: "Bungee Spice", sans-serif; */
+  --ff: "Tac One", sans-serif;
+
+  --bf: "Poppins", sans-serif;
+  --dark: #31473a;
+
+  --light: #fff;
+  --bg: #101820;
+
+  --bgh: #0f0f0fa6;
+}
+
+/* utitlites */
+.btn {
+  font-size: 0.9em;
+  padding: 0.35em 1.4em;
+  margin: 5px;
+
+  border: 2px solid var(--light);
+  border-radius: 5px;
+}
+.btn:hover {
+  box-shadow: 2px 2px 2px 1px rgba(130, 241, 163, 0.767);
+}
+.tab__btn {
+  padding: 0.2em 1em;
+  border: 2px solid var(--light);
+  background-color: transparent;
+  color: var(--light);
+}
+
+.t-button {
+  border-radius: 18px;
+  background-color: transparent;
+  color: var(--light);
+}
+
+.theme__btn {
+  padding: 0.2em 0.2em;
+  border: 2px solid var(--light);
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff);
+  font-size: calc(1vw + 1vh);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10vh 8vh 1.3fr 2.3vh 1.5fr;
+  grid-template-areas:
+    "he"
+    "nav"
+    "ed"
+    "oth"
+    "ot";
+
+  background: var(--bg);
+  color: var(--light);
+}
+
+.header {
+  grid-area: he;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f52549;
+
+  padding: 1em;
+}
+
+.header__logo {
+  font-family: var(--ff);
+}
+
+.header__right {
+  display: flex;
+}
+
+.header__auth {
+  display: flex;
+}
+.header__auth--logged {
+  display: flex;
+}
+
+.header__editor {
+  display: none;
+}
+
+.navbar {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em;
+}
+.navbar__tab,
+.navbar__button {
+  display: flex;
+  align-items: center;
+}
+
+.editor {
+  grid-area: ed;
+  display: none;
+}
+
+.header__output {
+  grid-area: oth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid white;
+}
+
+.output {
+  grid-area: ot;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.footer {
+  text-align: center;
+}
+
+/* overide class */
+.editor--current {
+  display: block;
+}
+
+.not-display {
+  display: none;
+}
+
+@media screen and (min-width: 48em) {
+  body {
+    font-size: calc(1vw + 1vh);
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 16vh repeat(3, 3.2vh 1fr);
+    grid-template-areas:
+      "he he"
+      "hh oth"
+      "ht ot"
+      "ch ot"
+      "cs ot"
+      "jh ot"
+      "js ot";
+  }
+  .navbar__tab,
+  .navbar,
+  .navbar__button,
+  .footer {
+    display: none;
+  }
+
+  .header__logo {
+    font-size: 0.8em;
+  }
+
+  .navbar__button--desktop {
+    display: flex;
+  }
+
+  .header__editor {
+    display: block;
+  }
+
+  .editor {
+    display: block;
+  }
+
+  .header__editor--html,
+  .header__editor--css,
+  .header__editor--js,
+  .header__output {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid var(--light);
+
+    /* background-color: rgba(0, 255, 157, 0.582); */
+    color: var(--light);
+  }
+
+  .header__editor--html {
+    grid-area: hh;
+  }
+
+  .header__editor--css {
+    grid-area: ch;
+  }
+
+  .header__editor--js {
+    grid-area: jh;
+  }
+
+  .header__output {
+    grid-area: oth;
+    border-left: 3px solid var(--light);
+  }
+
+  .output {
+    grid-area: ot;
+  }
+
+  .editor__html {
+    grid-area: ht;
+  }
+
+  .editor__css {
+    grid-area: cs;
+  }
+
+  .editor__js {
+    grid-area: js;
+  }
+}

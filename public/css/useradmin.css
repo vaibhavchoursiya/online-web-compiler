@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Tac+One&display=swap");
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+/* utility class */
+.not-show {
+  display: none;
+}
+.btn {
+  margin: 5px;
+  font-size: 0.9em;
+  padding: 0.35em 1.4em;
+  border-radius: 3px;
+  border: 2px solid var(--light);
+  color: var(--light);
+}
+
+/* css varibales */
+:root {
+  /* colors */
+  /* --dark: #021102;*/
+  /* --light: #eeeeee; */
+  /* --aside-color: rgb(74, 74, 255); */
+  --aside-color: #000;
+  --ff: "Tac One", sans-serif;
+
+  --dark: #31473a;
+  --light: #edf4f2;
+  --border: 2px solid var(--light);
+}
+
+body {
+  min-height: 100vh;
+  color: var(--light);
+  background-color: var(--dark);
+  /* font-size: calc(9px + 0.6vw); */
+  font-family: var(--ff);
+  font-size: calc(1vw + 1vh);
+
+  font-weight: bolder;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10vh 1fr;
+  grid-template-areas:
+    "he"
+    "pf";
+}
+
+.header {
+  grid-area: he;
+  display: flex;
+  padding: 0 1vw;
+  /* background-color: rgb(255, 0, 64);
+  */
+  background-color: #f52549;
+}
+
+.header__section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.currentuser-section {
+  display: flex;
+  font-family: var(--ff);
+}
+
+.logo {
+  font-family: var(--ff);
+}
+
+.program-field {
+  grid-area: pf;
+  display: flex;
+  justify-content: center;
+
+  align-items: flex-start;
+  align-self: flex-start;
+  flex-wrap: wrap;
+  margin: 1%;
+}

@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Tac+One&display=swap");
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.editor-typography {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* utility class */
+.not-show {
+  display: none;
+}
+.btn {
+  margin: 5px;
+  font-size: 0.9em;
+  padding: 0.35em 1.4em;
+  border-radius: 3px;
+  border: 2px solid var(--light);
+}
+
+/* css varibales */
+:root {
+  /* colors */
+  /* --dark: #021102;*/
+  /* --light: #eeeeee; */
+  /* --aside-color: rgb(74, 74, 255); */
+  --aside-color: #000;
+  --ff: "Tac One", sans-serif;
+
+  --dark: #31473a;
+  --light: #edf4f2;
+  --border: 2px solid var(--light);
+}
+
+body {
+  min-height: 100vh;
+  color: var(--light);
+  background-color: var(--dark);
+  /* font-size: calc(9px + 0.6vw); */
+  font-family: var(--ff);
+  font-size: calc(1vw + 1vh);
+
+  font-weight: bolder;
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: 8vh 6vh 2fr 2.5vh 1fr 2.5vh 1.3fr;
+  grid-template-areas:
+    "he he"
+    "fl nv"
+    "ed ed"
+    "inh inh"
+    "in in"
+    "oth oth"
+    "ot ot";
+}
+
+.header {
+  grid-area: he;
+  display: flex;
+  padding: 0 1vw;
+  /* background-color: rgb(255, 0, 64);
+  */
+  background-color: #f52549;
+}
+
+.header__mobile-menu {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.header__section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--ff);
+}
+
+.mobile-navbar {
+  grid-area: nv;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.theme-button {
+  background-color: transparent;
+  /* background-color: rgb(74, 74, 255); */
+}
+
+.admin-section,
+.currentuser-section {
+  display: flex;
+  font-family: var(--ff);
+}
+
+.no-display {
+  display: none;
+}
+.filename {
+  grid-area: fl;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.9em;
+  border: var(--border);
+  border-bottom: none;
+}
+
+.editor-section {
+  grid-area: ed;
+}
+.input-header,
+.output-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-header {
+  grid-area: inh;
+}
+.input-section {
+  grid-area: in;
+}
+
+.output-header {
+  grid-area: oth;
+}
+
+.output-window {
+  grid-area: ot;
+}
+
+/* Media query */
+@media screen and (min-width: 48em) {
+  body {
+    grid-template-columns: 5vw 9vw 1fr 1fr;
+    grid-template-rows: 15vh 7.5vh 0.7fr 1fr;
+    grid-template-areas:
+      "he he he he"
+      "as fl nl nr"
+      "as ed ed in"
+      "as ed ed ot";
+    /* gap: 0.3em; */
+    font-size: calc(1vw + 1vh);
+  }
+
+  .not-show {
+    display: block;
+  }
+  .mobile-navbar,
+  .mobile-headers,
+  .header__mobile-menu {
+    display: none;
+  }
+
+  .header {
+    grid-area: he;
+  }
+
+  .navbar-right {
+    grid-area: nr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+    border-left: var(--border);
+  }
+
+  .navbar-left {
+    grid-area: nl;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    border-bottom: var(--border);
+  }
+
+  .filename {
+    font-size: 0.6em;
+  }
+
+  .sidebar {
+    grid-area: as;
+    background-color: var(--aside-color);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark);
+    align-items: center;
+    border: var(--border);
+    border-right: 2px solid var(--light);
+  }
+  .sidebar a {
+    width: 70%;
+
+    margin: 1vh 0;
+    background-color: var(--light);
+    border: var(--border);
+    border-radius: 5px;
+  }
+
+  .editor-section {
+    grid-area: ed;
+  }
+
+  .input-section {
+    grid-area: in;
+    border-left: var(--border);
+  }
+
+  .output-window {
+    grid-area: ot;
+    border-left: var(--border);
+    border-top: var(--border);
+  }
+}

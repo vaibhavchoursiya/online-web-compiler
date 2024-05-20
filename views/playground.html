@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayGround</title>
+    <link rel="stylesheet" href="/css/playground.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logo"><h1>OnlineWebCompiler</h1></div>
+
+      <section class="header__right">
+        <section class="navbar__button navbar__button--desktop not-display">
+          <select
+            class="btn t-button"
+            name="theme-selecter"
+            id="theme-dropdown"
+          ></select>
+          <a class="btn save">Save</a>
+        </section>
+        <section class="header__auth">
+          <a class="btn login">Login</a>
+          <a class="btn signup">SignUp</a>
+        </section>
+        <!-- disable if not logged -->
+        <section class="header__auth--logged">
+          <!--  -->
+          <a class="btn username">username</a>
+          <a class="btn logout">Logout</a>
+        </section>
+      </section>
+    </header>
+
+    <nav class="navbar">
+      <!-- disable on desktop -->
+      <section class="navbar__tab">
+        <a class="tab__btn" id="html-tab" value="editor--html">index.html</a>
+        <a class="tab__btn" id="css-tab" value="editor--css">style.css</a>
+        <a class="tab__btn" id="js-tab" value="editor--js">script.js</a>
+      </section>
+      <section class="navbar__button">
+        <a class="btn save">Save</a>
+        <select
+          class="theme__btn"
+          name="theme-selecter"
+          id="theme-dropdown"
+        ></select>
+      </section>
+    </nav>
+
+    <header class="header__editor header__editor--html">Html</header>
+    <header class="header__editor header__editor--css">Css</header>
+    <header class="header__editor header__editor--js">Js</header>
+
+    <section
+      class="editor editor__html editor--current"
+      id="editor--html"
+    ></section>
+    <section class="editor editor__css" id="editor--css"></section>
+    <section class="editor editor__js" id="editor--js"></section>
+
+    <header class="header__output">Output</header>
+    <iframe class="output"></iframe>
+
+    <footer class="footer">
+      <p>copyright &copy; 2024</p>
+    </footer>
+
+    <!-- scripts -->
+    <script src="/lib/ace.js"></script>
+    <script src="/lib/mode-html.js"></script>
+    <script src="/lib/mode-css.js"></script>
+    <script src="/lib/mode-javascript.js"></script>
+    <script src="/lib/theme-monokai.js"></script>
+
+    <script src="/js/playground.js"></script>
+  </body>
+</html>

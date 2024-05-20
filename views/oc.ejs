@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnlineWebCompiler</title>
+    <link rel="stylesheet" href="./css/oc.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__mobile-menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="38"
+          height="38"
+          viewBox="0 0 80 80"
+        >
+          <path fill="#c2e8ff" d="M2.5 36.5H77.5V43.5H2.5z"></path>
+          <path
+            fill="#7496c4"
+            d="M77,37v6H3v-6H77 M78,36H2v8h76V36L78,36z"
+          ></path>
+          <path fill="#c2e8ff" d="M2.5 16.5H77.5V23.5H2.5z"></path>
+          <path
+            fill="#7496c4"
+            d="M77,17v6H3v-6H77 M78,16H2v8h76V16L78,16z"
+          ></path>
+          <g>
+            <path fill="#c2e8ff" d="M2.5 56.5H77.5V63.5H2.5z"></path>
+            <path
+              fill="#7496c4"
+              d="M77,57v6H3v-6H77 M78,56H2v8h76V56L78,56z"
+            ></path>
+          </g>
+        </svg>
+      </div>
+      <section class="header__section">
+        <div class="logo">
+          <h1>OnlineWebCompiler</h1>
+          <p><%= languageName %> compiler</p>
+        </div>
+        <div class="admin-section">
+          <a class="btn login" href="/user/login" target="_blank">Login</a>
+          <a class="btn signup" href="/user/signup" target="_blank">SignUp</a>
+        </div>
+        <div class="currentuser-section no-display">
+          <a class="btn username" href="/user/admin"></a>
+          <a class="btn logout" href="#">Logout</a>
+        </div>
+      </section>
+    </header>
+
+    <nav class="navbar-left not-show">
+      <a class="btn run" href="#">Run</a>
+      <a class="btn save" href="#">Save</a>
+      <select
+        name="themes"
+        id=""
+        class="btn theme-button theme-dropdown-desktop"
+      ></select>
+    </nav>
+
+    <nav class="navbar-right not-show">
+      <p>Input</p>
+      <a class="btn clear" href="#">Clear</a>
+    </nav>
+
+    <nav class="mobile-navbar">
+      <a class="btn m-run" href="#">Run</a>
+      <a class="btn m-save" href="#">Save</a>
+      <select
+        name="themes"
+        id="theme-dropdown"
+        class="btn theme-button theme-dropdown"
+      ></select>
+      <a class="btn m-clear" href="#">Clear</a>
+    </nav>
+
+    <aside class="sidebar not-show">
+      <a href="/java" target="_blank"
+        ><img src="./images/icons8-java-50.png" alt=""
+      /></a>
+      <a href="/python" target="_blank"
+        ><img src="./images/icons8-python-50.png" alt=""
+      /></a>
+      <a href="/c" target="_blank"
+        ><img src="./images/icons8-c-50.png" alt=""
+      /></a>
+      <a href="/hcj/playground" target="_blank"
+        ><img src="./images/icons8-html-50.png" alt=""
+      /></a>
+      <a href="/cpp" target="_blank"
+        ><img src="./images/icons8-c++-48.png" alt=""
+      /></a>
+      <a href="/ruby" target="_blank"
+        ><img src="./images/icons8-ruby-50.png" alt=""
+      /></a>
+    </aside>
+
+    <header class="input-header mobile-headers">Input</header>
+    <header class="output-header mobile-headers">Output</header>
+
+    <section class="filename"><p>main<%=ext%></p></section>
+
+    <section class="editor-section editor-typography" id="editor"></section>
+
+    <section
+      class="input-section editor-typography"
+      id="input-editor"
+    ></section>
+
+    <section class="output-window editor-typography" id="output"></section>
+  </body>
+
+  <script src="./lib/ace.js"></script>
+
+  <script src="./lib/theme-dracula.js"></script>
+  <script src="./lib/theme-terminal.js"></script>
+  <script src="./lib/theme-merbivore.js"></script>
+  <script src="./lib/theme-tomorrow.js"></script>
+  <script src="./lib/theme-xcode.js"></script>
+
+  <script src="./lib/mode-python.js"></script>
+  <script src="./lib/mode-c_cpp.js"></script>
+  <script src="./lib/mode-java.js"></script>
+  <script src="./lib/mode-ruby.js"></script>
+
+  <script src="./js/oc.js"></script>
+</html>

@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Tac+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100vh;
+}
+
+:root {
+  --ff: "Tac One", sans-serif;
+}
+
+h1 {
+  font-family: var(--ff);
+}
+
+body {
+  min-height: 100vh;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-section {
+  display: none;
+}
+
+.error {
+  display: none;
+  font-size: 70%;
+  color: brown;
+}
+.not-display-error {
+  display: none;
+}
+
+.display-error {
+  display: block;
+}
+
+@media screen and (min-width: 48em) {
+  body {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "lg ig";
+  }
+
+  .left-section {
+    grid-area: lg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-section {
+    display: block;
+    grid-area: ig;
+  }
+}
